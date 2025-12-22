@@ -1,0 +1,37 @@
+[package]
+name = "bel7-axum"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Common Axum web server utilities: static files, pagination, WebSocket helpers"
+license = "MIT OR Apache-2.0"
+authors = ["Michael S. Klishin"]
+repository = "https://github.com/michaelklishin/bel7-axum"
+homepage = "https://github.com/michaelklishin/bel7-axum"
+keywords = ["axum", "web", "http", "api", "pagination"]
+categories = ["web-programming::http-server", "asynchronous"]
+
+[dependencies]
+axum = { version = "0.8", features = ["ws"] }
+http = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+mime_guess = "2"
+thiserror = "2.0"
+
+[dependencies.rust-embed]
+version = "8"
+optional = true
+
+[dependencies.tokio]
+version = "1.40"
+features = ["time"]
+optional = true
+
+[dev-dependencies]
+serde_json = "1.0"
+
+[features]
+default = []
+embed = ["dep:rust-embed"]
+websocket = ["dep:tokio"]
+full = ["embed", "websocket"]
