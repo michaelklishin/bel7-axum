@@ -23,7 +23,7 @@ version = "8"
 optional = true
 
 [dependencies.tokio]
-version = "1.40"
+version = "1.51"
 features = ["time"]
 optional = true
 
