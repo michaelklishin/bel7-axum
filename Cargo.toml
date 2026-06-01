@@ -13,7 +13,7 @@ categories = ["web-programming::http-server", "asynchronous"]
 
 [dependencies]
 axum = { version = "0.8", features = ["ws"] }
-http = "1.0"
+http = "1.4"
 serde = { version = "1.0", features = ["derive"] }
 mime_guess = "2"
 thiserror = "2.0"
